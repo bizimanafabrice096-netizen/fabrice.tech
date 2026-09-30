@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fabrice.tech</title>
+  <link rel="stylesheet" href="style.css">
+      <link rel="icon" type="image/png" href="assets/bizimana-icon.png">
+      <link rel="icon" type="image/png" href="bizimana-icon.png">
+      <link rel="icon" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+<polygon points='50,10 95,90 5,90' fill='black'/>
+</svg>">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#home">Net<span>Learn</span></a>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#ideas">Ideas</a>
+      <a href="#discussion">Discussion</a>
+      <a href="#progress">Progress</a>
+      <button class="login-btn" onclick="openLogin()">Login</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container hero-content">
+    <div>
+      <p class="eyebrow">LEARN • PRACTICE • SHARE</p>
+      <h1>Learn Networking & Internet Technology</h1>
+      <p class="hero-text">A simple online learning platform for understanding networks, the Internet, cybersecurity, and modern communication technologies.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#courses">Explore Courses</a>
+        <a class="btn secondary" href="#ideas">Share an Idea</a>
+      </div>
+    </div>
+    <div class="network-card">
+      <div class="network-icon">🌐</div>
+      <h3>Connect. Learn. Grow.</h3>
+      <p>Build your networking knowledge step by step.</p>
+      <div class="mini-network"><span>💻</span><b>↔</b><span>📡</span><b>↔</b><span>🌍</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-grid">
+    <div><strong>6+</strong><span>Learning Topics</span></div>
+    <div><strong>20+</strong><span>Practice Questions</span></div>
+    <div><strong>100%</strong><span>Beginner Friendly</span></div>
+    <div><strong>💡</strong><span>Share Your Ideas</span></div>
+  </div>
+</section>
+
+<section id="courses" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">COURSES</p>
+      <h2>Explore our courses</h2>
+      <p>Choose a topic and start learning.</p>
+    </div>
+    <div class="search-row">
+      <input id="courseSearch" oninput="filterCourses()" placeholder="Search courses e.g. IP address...">
+    </div>
+    <div class="course-grid" id="courseGrid">
+      <article class="course-card" data-search="computer networking lan wan network">
+        <div class="course-icon">🖧</div><h3>Computer Networking</h3>
+        <p>Learn LAN, WAN, topologies, devices and basic network concepts.</p>
+        <button onclick="startCourse('Computer Networking')">Start Course →</button>
+      </article>
+      <article class="course-card" data-search="internet technology web http dns">
+        <div class="course-icon">🌐</div><h3>Internet Technology</h3>
+        <p>Understand how the Internet, websites, DNS, HTTP and browsers work.</p>
+        <button onclick="startCourse('Internet Technology')">Start Course →</button>
+      </article>
+      <article class="course-card" data-search="tcp ip protocols">
+        <div class="course-icon">🔗</div><h3>TCP/IP Fundamentals</h3>
+        <p>Discover IP addressing, TCP, UDP, ports and common protocols.</p>
+        <button onclick="startCourse('TCP/IP Fundamentals')">Start Course →</button>
+      </article>
+      <article class="course-card" data-search="network security cybersecurity">
+        <div class="course-icon">🔐</div><h3>Network Security</h3>
+        <p>Learn basic security concepts, threats, passwords and safe networking.</p>
+        <button onclick="startCourse('Network Security')">Start Course →</button>
+      </article>
+      <article class="course-card" data-search="router switch devices">
+        <div class="course-icon">📡</div><h3>Routers & Switches</h3>
+        <p>Understand the roles of routers, switches, access points and modems.</p>
+        <button onclick="startCourse('Routers & Switches')">Start Course →</button>
+      </article>
+      <article class="course-card" data-search="ip address subnetting">
+        <div class="course-icon">🧮</div><h3>IP Addressing</h3>
+        <p>Practice IPv4, IPv6, private/public addresses and subnetting basics.</p>
+        <button onclick="startCourse('IP Addressing')">Start Course →</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="lesson" class="section light">
+  <div class="container lesson-box">
+    <div>
+      <p class="eyebrow">FEATURED LESSON</p>
+      <h2>What is a computer network?</h2>
+      <p>A computer network is a group of connected devices that communicate and share resources such as files, printers and Internet access.</p>
+      <ul>
+        <li><b>Router:</b> connects different networks.</li>
+        <li><b>Switch:</b> connects devices within a local network.</li>
+        <li><b>IP address:</b> identifies a device on a network.</li>
+        <li><b>Protocol:</b> rules used for communication.</li>
+      </ul>
+      <button class="btn primary" onclick="markProgress()">Mark Lesson Complete</button>
+    </div>
+    <div class="diagram">
+      <div>💻 Laptop</div><span>↕</span><div>📡 Router</div><span>↕</span><div>🌍 Internet</div>
+    </div>
+  </div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="container quiz-box">
+    <div class="section-heading">
+      <p class="eyebrow">PRACTICE</p><h2>Quick Networking Quiz</h2>
+    </div>
+    <div id="quizArea">
+      <p><b>1. Which device normally connects different networks?</b></p>
+      <label><input type="radio" name="q1" value="0"> Switch</label>
+      <label><input type="radio" name="q1" value="1"> Router</label>
+      <label><input type="radio" name="q1" value="0"> Keyboard</label>
+      <p><b>2. What does IP stand for?</b></p>
+      <label><input type="radio" name="q2" value="1"> Internet Protocol</label>
+      <label><input type="radio" name="q2" value="0"> Internet Program</label>
+      <label><input type="radio" name="q2" value="0"> Internal Port</label>
+      <p><b>3. Which protocol is commonly used to resolve domain names?</b></p>
+      <label><input type="radio" name="q3" value="1"> DNS</label>
+      <label><input type="radio" name="q3" value="0"> USB</label>
+      <label><input type="radio" name="q3" value="0"> HTML</label>
+      <button class="btn primary" onclick="checkQuiz()">Submit Quiz</button>
+      <div id="quizResult"></div>
+    </div>
+  </div>
+</section>
+
+<section id="ideas" class="section light">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">COMMUNITY</p><h2>Share your ideas 💡</h2>
+      <p>Suggest new lessons, projects or improvements.</p>
+    </div>
+    <form class="idea-form" onsubmit="addIdea(event)">
+      <input id="ideaName" required placeholder="Your name">
+      <input id="ideaTitle" required placeholder="Idea title">
+      <textarea id="ideaText" required placeholder="Describe your idea..."></textarea>
+      <button class="btn primary">Post Idea</button>
+    </form>
+    <div id="ideasList" class="ideas-list"></div>
+  </div>
+</section>
+
+<section id="discussion" class="section">
+  <div class="container discussion">
+    <div>
+      <p class="eyebrow">DISCUSSION</p>
+      <h2>Learn together</h2>
+      <p>Ask questions and discuss networking topics with other learners.</p>
+    </div>
+    <div class="discussion-card">
+      <h3>💬 Community question</h3>
+      <p>What networking topic is most difficult for you?</p>
+      <input id="discussionAnswer" placeholder="Write your answer...">
+      <button class="btn primary" onclick="postDiscussion()">Post</button>
+      <div id="discussionPosts"></div>
+    </div>
+  </div>
+</section>
+
+<section id="progress" class="section light">
+  <div class="container progress-box">
+    <p class="eyebrow">YOUR LEARNING</p>
+    <h2>Learning Progress</h2>
+    <div class="progress-bar"><div id="progressFill"></div></div>
+    <p id="progressText">0% completed</p>
+    <button class="btn secondary" onclick="resetProgress()">Reset Progress</button>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <div><h3>NetLearn</h3><p>Learn networking and Internet technology.</p></div>
+    <p>© 2026 NetLearn. Educational project.</p>
+  </div>
+</footer>
+
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <button class="close" onclick="closeLogin()">×</button>
+    <h2>Login</h2>
+    <input id="loginName" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button class="btn primary" onclick="login()">Login</button>
+    <p id="loginMessage"></p>
+  </div>
+</div>
+
+<footer>
+    &copy; 2026 Bizimana Tech. All rights reserved.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+index.html
+Displaying README.txt.
